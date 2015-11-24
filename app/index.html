@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon" href="./images/icon.png" />
+	<link rel="shortcut icon" type="image/png" href="./images/icon.png">
+	<link rel="stylesheet" href="css/keskit.css">
+	<link rel="stylesheet" href="css/demo.css">
+
+	<title>Rekenmachine</title>
+
+	<script type="text/javascript" src="js/keskit.js"></script>
+	<script type="text/javascript" src="js/demo_gui.js"></script>
+	<script type="text/javascript" src="js/demo_logic.js"></script>
+
+	<script type="text/javascript">
+		if (location.protocol.indexOf("http") == -1)
+			document.write('<script type="text/javascript" src="cordova.js"><\/script>')
+		else {
+			if (navigator.userAgent.search('Android') > -1)
+				document.write('<script type="text/javascript" src="android/cordova.js"><\/script>')
+			else if (navigator.userAgent.search('iPhone|iPad') > -1)
+				document.write('<script type="text/javascript" src="ios/cordova.js"><\/script>');
+		}
+	</script>
+
+</head>
+<body>
+
+<div class='kit_page show' id="page_main">
+	<div class='panel header'>
+		<span class='title'>Rekenmachine</span>
+        <a href="#" class="action" data-action="aboutpage">over</a>
+    </div>
+	<div class='panel content'>
+		<div class='display'>
+			<span id="display_top"></span>
+			<span id="display_main"></span>
+		</div>
+		<div class="keypad">
+			<button data-digit="1">1</button>
+			<button data-digit="2">2</button>
+			<button data-digit="3">3</button>
+			<button data-digit="C">C</button>
+			<button data-digit="4">4</button>
+			<button data-digit="5">5</button>
+			<button data-digit="6">6</button>
+			<button data-digit="+">+</button>
+			<button data-digit="7">7</button>
+			<button data-digit="8">8</button>
+			<button data-digit="9">9</button>
+			<button data-digit="-">-</button>
+			<button data-digit="*">*</button>
+			<button data-digit="0">0</button>
+			<button data-digit="/">/</button>
+			<button data-digit="=">=</button>
+		</div>
+	</div>
+	<div id="message"></div>
+</div>
+
+<div class='kit_page' id="page_about">
+    <div class='panel header'>
+        <span class='title'>Over de rekenmachine</span>
+        <a href="#" class="action" data-action="mainpage">terug</a>
+    </div>
+    <div class="panel content">
+        Dit is een demo app in de vorm van een rekenmachine
+		<br>
+        <button class="action" data-action="mainpage">terug naar de rekenmachine</button>
+    </div>
+</div>
+
+</body>
+</html>
