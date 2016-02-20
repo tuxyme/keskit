@@ -16,23 +16,35 @@ More information: https://cordova.apache.org/docs/en/latest/guide/platforms/inde
 
 Step 1: Setup development environment
 =====================================
-- install Git
-    Linux: use your package manager
-    Mac: http://git-scm.com/download
-    Windows: https://git-for-windows.github.io
-- install npm
-    run installer from https://nodejs.org
-- get project
-    > git clone https://github.com/tuxyme/keskit.git
-- install packages
-    > npm install
+This development environment uses version control system Git and the node.js
+Make sure these are installed on your system:
+
+  - install Git
+      Linux: use your package manager
+      Mac: http://git-scm.com/download
+      Windows: https://git-for-windows.github.io
+  
+  - install npm
+      run installer from https://nodejs.org
+
+Then download the Keskit project and install the packages needed for development:
+
+  - get project
+      > git clone https://github.com/tuxyme/keskit.git
+      > cd keskit
+  
+  - install packages
+      > npm install
+
 
 Step 2: Run app in browser (live server)
 ========================================
 - start local webserver
     > gulp serve
+
 - open in browser
     http://localhost:9900
+
 
 Step 3: Editing files
 =====================
