@@ -24,6 +24,11 @@ var doc = (function() {
         return element;
     };
 
+    me.forEachElement = function(query, cbFunc) {
+        var elements = document.querySelectorAll(query);
+        [].forEach.call(elements, cbFunc);
+    };
+
     document.addEventListener("DOMContentLoaded", function () {
         cbReadies.forEach(function(cbReady) {
             cbReady();
@@ -32,7 +37,6 @@ var doc = (function() {
 
     return me;
 }.call(this));
-
 
 
 /**
@@ -67,3 +71,40 @@ var store = (function() {
     return _store;
 
 }.call(this));
+
+/**
+ * audio player 
+ * 
+ * player.play(sound) will play file audio/sound.wav
+ * player.stop() will stop play
+ * 
+ */
+var player = (function() {
+    var me = {};
+    var audio = null;
+    var loading = false;
+    
+    function onReady() {
+       audio = document.createElement('audio');
+       audio.addEventListener("canplaythrough", function() {
+          if (loading) {
+            loading = false;
+            audio.play();
+          }
+       });
+    }
+    
+    me.play = function(sound) {
+      loading = true;
+      audio.setAttribute('src', sound);
+    };
+     
+    me.stop = function(sound) {
+      audio.pause();
+      loading = false;
+    };
+    
+    doc.whenReady(onReady);    
+
+    return me;
+}.call());
